@@ -49,8 +49,11 @@ export class UserResource extends APIResource {
   /**
    * Creates list of users with given input array
    */
-  createWithList(params: UserCreateWithListParams, options?: RequestOptions): APIPromise<User> {
-    const { items } = params;
+  createWithList(
+    params: UserCreateWithListParams | null | undefined = undefined,
+    options?: RequestOptions,
+  ): APIPromise<User> {
+    const { items } = params ?? {};
     return this._client.post('/user/createWithList', { body: items, ...options });
   }
 
@@ -138,7 +141,7 @@ export interface UserUpdateParams {
 }
 
 export interface UserCreateWithListParams {
-  items: Array<User>;
+  items?: Array<User>;
 }
 
 export interface UserLoginParams {
