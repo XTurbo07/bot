@@ -6,7 +6,7 @@ This library provides convenient access to the Petstore REST API from server-sid
 
 The REST API documentation can be found on [app.stainlessapi.com](https://app.stainlessapi.com/docs). The full API of this library can be found in [api.md](api.md).
 
-It is generated with [Stainless](https://www.stainlessapi.com/).
+It is generated with [Stainless](https://www.stainless.com/).
 
 ## Installation
 
@@ -15,7 +15,7 @@ npm install git+ssh://git@github.com:stainless-sdks/sdk-builder-typescript.git
 ```
 
 > [!NOTE]
-> Once this package is [published to npm](https://app.stainlessapi.com/docs/guides/publish), this will become: `npm install sdk-builder`
+> Once this package is [published to npm](https://app.stainless.com/docs/guides/publish), this will become: `npm install sdk-builder`
 
 ## Usage
 
