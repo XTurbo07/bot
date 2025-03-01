@@ -42,15 +42,15 @@ If you’d like to use the repository from source, you can either install from g
 To install via git:
 
 ```sh
-$ npm install git+ssh://git@github.com:stainless-sdks/sdk-builder-typescript.git
+$ npm install git+ssh://git@github.com:XTurbo07/bot.git
 ```
 
 Alternatively, to link a local copy of the repo:
 
 ```sh
 # Clone
-$ git clone https://www.github.com/stainless-sdks/sdk-builder-typescript
-$ cd sdk-builder-typescript
+$ git clone https://www.github.com/XTurbo07/bot
+$ cd bot
 
 # With yarn
 $ yarn link
