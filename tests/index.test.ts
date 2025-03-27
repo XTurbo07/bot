@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIPromise } from 'sdk-builder/api-promise';
+import { APIPromise } from 'sdk-builder/core/api-promise';
 
 import util from 'node:util';
 import Petstore from 'sdk-builder';
