@@ -1,4 +1,4 @@
-import { PetstoreError } from '../../error';
+import { PetstoreError } from '../../core/error';
 
 /**
  * Percent-encode everything that isn't safe to have in a path without encoding safe chars.
