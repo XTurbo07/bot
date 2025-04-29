@@ -1,5 +1,5 @@
 import { multipartFormRequestOptions, createForm } from 'sdk-builder/internal/uploads';
-import { toFile } from 'sdk-builder/uploads';
+import { toFile } from 'sdk-builder/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

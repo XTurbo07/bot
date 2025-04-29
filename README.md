@@ -11,11 +11,8 @@ It is generated with [Stainless](https://www.stainless.com/).
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:stainless-sdks/sdk-builder-typescript.git
+npm install sdk-builder
 ```
-
-> [!NOTE]
-> Once this package is [published to npm](https://app.stainless.com/docs/guides/publish), this will become: `npm install sdk-builder`
 
 ## Usage
 
@@ -58,35 +55,6 @@ main();
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
-
-## File uploads
-
-Request parameters that correspond to file uploads can be passed in many different forms:
-
-- `File` (or an object with the same structure)
-- a `fetch` `Response` (or an object with the same structure)
-- an `fs.ReadStream`
-- the return value of our `toFile` helper
-
-```ts
-import fs from 'fs';
-import Petstore, { toFile } from 'sdk-builder';
-
-const client = new Petstore();
-
-// If you have access to Node `fs` we recommend using `fs.createReadStream()`:
-await client.pets.uploadImage(0, { image: fs.createReadStream('/path/to/file') });
-
-// Or if you have the web `File` API you can pass a `File` instance:
-await client.pets.uploadImage(0, { image: new File(['my bytes'], 'file') });
-
-// You can also pass a `fetch` `Response`:
-await client.pets.uploadImage(0, { image: await fetch('https://somesite/file') });
-
-// Finally, if none of the above are convenient, you can use our `toFile` helper:
-await client.pets.uploadImage(0, { image: await toFile(Buffer.from('my bytes'), 'file') });
-await client.pets.uploadImage(0, { image: await toFile(new Uint8Array([0, 1, 2]), 'file') });
-```
 
 ## Handling errors
 
@@ -171,8 +139,10 @@ Note that requests which time out will be [retried twice by default](#retries).
 ### Accessing raw Response data (e.g., headers)
 
 The "raw" `Response` returned by `fetch()` can be accessed through the `.asResponse()` method on the `APIPromise` type that all methods return.
+This method returns as soon as the headers for a successful response are received and does not consume the response body, so you are free to write custom parsing or streaming logic.
 
 You can also use the `.withResponse()` method to get the raw `Response` along with the parsed data.
+Unlike `.asResponse()` this method consumes the body, returning once it is parsed.
 
 <!-- prettier-ignore -->
 ```ts
@@ -375,7 +345,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/sdk-builder-typescript/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/XTurbo07/bot/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 
